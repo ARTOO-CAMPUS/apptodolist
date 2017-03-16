@@ -1,10 +1,10 @@
 angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 
 	$urlRouterProvider.otherwise('/');
-	$urlRouterProvider.when('/', '/app');
+	$urlRouterProvider.when('', '/');
 
-	$stateProvider.state('/app', {
-		url: '/app',
+	$stateProvider.state('/', {
+		url: '/',
 		templateUrl: '/js/todo/todo.template.html',
 		controller: 'TodoCtrl'
 	});
