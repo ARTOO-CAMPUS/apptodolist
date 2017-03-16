@@ -1,4 +1,10 @@
+var mongoose = require('mongoose');
+var Todos = require('./todo.model.js');
 module.exports = (function () {
+
+	var createTodo = function (req, res) {
+
+	}
 
 	var getTodos = function (req, res) {
 
@@ -10,6 +16,7 @@ module.exports = (function () {
 
 	return {
 		getTodos: getTodos,
-		deleteTodo: deleteTodo
+		deleteTodo: deleteTodo,
+		createTodo: createTodo
 	}
 })();
