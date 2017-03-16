@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var Todos = require('./todo.controller.js');
 
-router.get('/', function (req, res) {
-	console.log('miao');
-});
+// prendi tutti i todos
+router.get('/', Todos.getTodos);
+
+// cancella un todo
+router.delete('/', Todos.deleteTodo);
 
 module.exports = router;
