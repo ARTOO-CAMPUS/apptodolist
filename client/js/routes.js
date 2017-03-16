@@ -1,8 +1,11 @@
 angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 
-	$stateProvider.state('test', {
-		url: '/test',
-		templateUrl: 'todo/todo.template.html',
+	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.when('/', '/app');
+
+	$stateProvider.state('/app', {
+		url: '/app',
+		templateUrl: '/js/todo/todo.template.html',
 		controller: 'TodoCtrl'
 	});
 });
