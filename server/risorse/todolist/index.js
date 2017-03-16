@@ -9,6 +9,6 @@ router.post('/', Todos.createTodo);
 router.get('/', Todos.getTodos);
 
 // cancella un todo
-router.delete('/', Todos.deleteTodo);
+router.delete('/:id([0-9a-f]{24})', Todos.deleteTodo);
 
 module.exports = router;

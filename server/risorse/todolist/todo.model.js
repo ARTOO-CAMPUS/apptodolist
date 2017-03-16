@@ -10,6 +10,10 @@ var todosSchema = new Schema({
 		type: String,
 		required: [true, "Inserisci la descrizione"]
 	},
+	fatto: {
+		type: Boolean,
+		default: false
+	}
 });
 
 var Todos = mongoose.model('Todos', todosSchema);
