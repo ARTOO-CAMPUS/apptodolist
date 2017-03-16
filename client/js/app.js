@@ -1,4 +1,1 @@
-angular.module('app', [])
-	.run(function () {
-		console.log("ciao");
-	});
+angular.module('app', ["ui.router"]);
