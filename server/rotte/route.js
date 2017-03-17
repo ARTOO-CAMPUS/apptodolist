@@ -22,8 +22,8 @@ module.exports = function (app, express) {
 	app.use('/angular-aria', express.static(path.join(__dirname, "..", "..", "node_modules", "angular-aria")));
 	//ANGULAR-UI-ROUTER
 	app.use('/angular-material', express.static(path.join(__dirname, "..", "..", "node_modules", "angular-material")));
-	app.use('/date', express.static(path.join(__dirname, "..", "..", "node_modules", "ng-material-datetimepicker")));
-	app.use('/moment', express.static(path.join(__dirname, "..", "..", "node_modules", "moment", "min")));
+	// app.use('/date', express.static(path.join(__dirname, "..", "..", "node_modules", "ng-material-datetimepicker")));
+	// app.use('/moment', express.static(path.join(__dirname, "..", "..", "node_modules", "moment", "min")));
 
 	//JS
 	app.use('/js', express.static(path.join(__dirname, "..", "..", "client", "js")));
