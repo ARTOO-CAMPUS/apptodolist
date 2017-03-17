@@ -13,7 +13,17 @@ var todosSchema = new Schema({
 	fatto: {
 		type: Boolean,
 		default: false
+	},
+	data: {
+		type: Date,
 	}
+});
+
+todosSchema.pre('save', function (next) {
+	if (!this.data) {
+		this.data = new Date();
+	}
+	next();
 });
 
 var Todos = mongoose.model('Todos', todosSchema);
