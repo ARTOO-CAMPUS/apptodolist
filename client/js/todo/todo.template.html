@@ -1,4 +1,5 @@
-<div layout="column" flex="60">
+<div layout="column" layout-align="start none" layout-fill>
+
 	<form name="userForm" ng-submit="crea()" novalidate>
 		<md-content layout="row" layout-align="space-between center">
 			<md-input-container>
@@ -36,26 +37,25 @@
 			<md-divider></md-divider>
 		</md-list-item>
 	</md-list>
-</div>
 
-<button style="position:fixed" class="md-fab md-fab-bottom-right md-button md-ink-ripple" type="button" aria-label="Open"
-    aria-hidden="false" ng-click="showPrompt($event)">
+	<button style="position:fixed" class="md-fab md-fab-bottom-right md-button md-ink-ripple" type="button" aria-label="Open"
+	    aria-hidden="false" ng-click="showPrompt($event)">
         <md-tooltip md-direction="top" md-visible="tooltipVisible">Aggiungi ToDo</md-tooltip>
 		<md-icon><i class="material-icons">plus_one</i></md-icon>
       <div class="md-ripple-container"></div>
 </button>
 
-<div style="visibility: hidden">
-	<div class="md-dialog-container" id="myDialog">
-		<md-dialog layout-padding>
-			<h2>Pre-Rendered Dialog</h2>
-			<p>
-				This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its template on each opening.
-				<br/><br/> The Dialog Element is a static element in the DOM, which is just visually hidden.<br/> Once the dialog opens,
-				we just fetch the element from the DOM into our dialog and upon close we restore the element back into its old DOM position.
-			</p>
-		</md-dialog>
+	<div style="visibility: hidden">
+		<div class="md-dialog-container" id="myDialog">
+			<md-dialog layout-padding>
+				<h2>Pre-Rendered Dialog</h2>
+				<p>
+					This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its template on each opening.
+					<br/><br/> The Dialog Element is a static element in the DOM, which is just visually hidden.<br/> Once the dialog opens,
+					we just fetch the element from the DOM into our dialog and upon close we restore the element back into its old DOM position.
+				</p>
+			</md-dialog>
+		</div>
 	</div>
-</div>
 
 </div>
