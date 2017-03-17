@@ -1,1 +1,5 @@
-angular.module('app', ["ui.router"]);
+angular.module('app', [
+	'ui.router',
+]).run(function () {
+	console.log("app is started");
+});
