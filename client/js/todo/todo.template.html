@@ -14,7 +14,7 @@
 	<h1>{{todo.titolo}}</h1>
 	<h5>{{todo.descrizione}}</h5>
 	<h6>{{todo.data | date:'medium'}}</h6>
-	<input type="date" ng-model="todo.data ">
+	<input type="date" ng-model="todo.data">
 	<input type="checkbox" ng-checked="todo.fatto " ng-model="todo.fatto " ng-change="update(todo._id,todo.fatto) ">
 	<br>
 	<button class="btn btn-danger " ng-click="elimina(todo._id) ">elimina</button>
