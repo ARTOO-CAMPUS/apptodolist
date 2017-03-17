@@ -3,7 +3,9 @@ angular.module('app').controller('TodoCtrl', function ($scope, TodoSrv) {
 	$scope.lista = [];
 	TodoSrv.getTodos().then(function (data) {
 		$scope.lista = data;
-		console.log(data);
+		$scope.lista.forEach(function (el) {
+			el.data = new Date(el.data);
+		});
 	});
 
 	$scope.crea = function () {
@@ -13,6 +15,9 @@ angular.module('app').controller('TodoCtrl', function ($scope, TodoSrv) {
 				return TodoSrv.getTodos()
 			}).then(function (data) {
 				$scope.lista = data;
+				$scope.lista.forEach(function (el) {
+					el.data = new Date(el.data);
+				});
 			})
 	}
 
@@ -21,7 +26,11 @@ angular.module('app').controller('TodoCtrl', function ($scope, TodoSrv) {
 			.then(function (data) {
 				return TodoSrv.getTodos()
 			}).then(function (data) {
+
 				$scope.lista = data;
+				$scope.lista.forEach(function (el) {
+					el.data = new Date(el.data);
+				});
 			});
 	}
 
@@ -31,7 +40,9 @@ angular.module('app').controller('TodoCtrl', function ($scope, TodoSrv) {
 				return TodoSrv.getTodos()
 			}).then(function (data) {
 				$scope.lista = data;
-				console.log(data);
+				$scope.lista.forEach(function (el) {
+					el.data = new Date(el.data);
+				});
 			})
 	}
 

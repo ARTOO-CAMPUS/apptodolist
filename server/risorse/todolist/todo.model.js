@@ -16,12 +16,14 @@ var todosSchema = new Schema({
 	},
 	data: {
 		type: Date,
+
 	}
 });
 
 todosSchema.pre('save', function (next) {
 	if (!this.data) {
-		this.data = new Date();
+		var data = new Date();
+		this.data = data.toLocaleDateString();
 	}
 	next();
 });
