@@ -31,7 +31,7 @@ module.exports = function (app, express) {
 	//CSS
 	app.use('/css', express.static(path.join(__dirname, "..", "..", "client", "css")));
 
-	//CSS
+	//CLIENT
 	app.use('/', express.static(path.join(__dirname, "..", "..", "client")));
 
 	//ROTTA INDEX

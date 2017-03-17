@@ -4,8 +4,13 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.when('', '/');
 
 	$stateProvider.state('/', {
-		url: '/',
-		templateUrl: '/js/todo/todo.template.html',
-		controller: 'TodoCtrl'
-	});
+			url: '/',
+			templateUrl: '/js/todo/todo.template.html',
+			controller: 'TodoCtrl'
+		})
+		.state('material', {
+			url: '/material',
+			templateUrl: '/js/todo/material.template.html',
+			controller: 'TodoCtrl'
+		})
 });

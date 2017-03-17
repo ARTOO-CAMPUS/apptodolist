@@ -35,6 +35,7 @@ angular.module('app').controller('TodoCtrl', function ($scope, TodoSrv) {
 	}
 
 	$scope.update = function (id, fatto) {
+		console.log(id, fatto);
 		TodoSrv.updateTodo(id, fatto)
 			.then(function (data) {
 				return TodoSrv.getTodos()

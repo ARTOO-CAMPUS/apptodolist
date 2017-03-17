@@ -1,22 +1,39 @@
-<form ng-submit="crea()" novalidate>
-	<div class="form-group">
-		<label for="titolo">titolo</label>
-		<input type="text" class="form-control" id="titolo" placeholder="inseirire un titolo" ng-model="nuovo.titolo">
-	</div>
-	<div class="form-group">
-		<label for="descrizione">descrizione</label>
-		<input type="text" class="form-control" id="descrizione" placeholder="inseirire una descrizione" ng-model="nuovo.descrizione">
-	</div>
-	<button type="submit" class="btn btn-success">Crea </button>
-</form>
+<div layout="column" flex="60">
+	<form name="userForm" ng-submit="crea()" novalidate>
+		<md-content layout="row" layout-align="space-between center">
+			<md-input-container>
+				<label>Title</label>
+				<input ng-model="nuovo.titolo" required>
+			</md-input-container>
+			<md-input-container>
+				<label>Descrizione</label>
+				<input ng-model="nuovo.descrizione" required>
+			</md-input-container>
+			<md-input-container>
+				<label>Data</label>
+				<md-datepicker ng-model="nuovo.data" required></md-datepicker>
+			</md-input-container>
+			<md-button type="submit" class="md-fab" aria-label="Eat cake">
+				<md-icon><i class="material-icons  orange600">plus_one</i></md-icon>
+			</md-button>
+		</md-content>
+	</form>
 
-<div ng-repeat="todo in lista  | orderBy:'_id':true">
-	<h1>{{todo.titolo}}</h1>
-	<h5>{{todo.descrizione}}</h5>
-	<h6>{{todo.data | date:'medium'}}</h6>
-	<input type="date" ng-model="todo.data">
-	<input type="checkbox" ng-checked="todo.fatto " ng-model="todo.fatto " ng-change="update(todo._id,todo.fatto) ">
-	<br>
-	<button class="btn btn-danger " ng-click="elimina(todo._id) ">elimina</button>
-	<hr>
+
+	<md-list>
+		<md-subheader class="md-no-sticky">Lista dei todos</md-subheader>
+		<md-list-item class="md-3-line" ng-repeat="todo in lista | orderBy:'_id':true" ng-click="elimina(todo._id)">
+			<div class="md-list-item-text" layout="row" layout-align="space-between center">
+				<div layout="column">
+					<h2>{{ todo.titolo |uppercase }}</h2>
+					<h4>{{ todo.descrizione | lowercase }}</h4>
+					<md-checkbox ng-model="todo.fatto" aria-label="Checkbox" ng-change="update(todo._id,todo.fatto)">
+						Fatto
+					</md-checkbox>
+				</div>
+				<md-datepicker ng-model="todo.data"></md-datepicker>
+			</div>
+			<md-divider></md-divider>
+		</md-list-item>
+	</md-list>
 </div>
