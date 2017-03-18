@@ -14,12 +14,14 @@
 	<!--<link rel="stylesheet" href="date/dist/material-datetimepicker.min.css">-->
 </head>
 
-<body ng-app="app">
+<body ng-app="app" layout-gt-xs="column">
 	<div ng-include="'UI/nav.template.html'"></div>
-	<md-content ui-view layout-padding layout-fill></md-content>
-	<footer>
-		<div ng-include="'UI/footer.template.html'"></div>
-	</footer>
+	<md-content flex layout="column">
+		<md-content ui-view layout-padding layout-fill></md-content>
+		<footer>
+			<div ng-include="'UI/footer.template.html'"></div>
+		</footer>
+	</md-content>
 </body>
 
 <!--<script src="moment/moment.min.js"></script>-->
